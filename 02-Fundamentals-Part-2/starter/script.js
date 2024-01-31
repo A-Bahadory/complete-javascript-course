@@ -111,16 +111,28 @@ for (let i = testArray.length - 1; i >= 0; i--) {
 }
 
 for (let exercise = 1; exercise < 3; exercise++) {
-  console.log(`---- starting exercise ${exercise}`);
+  //console.log(`---- starting exercise ${exercise}`);
 
   for (let workout = 1; workout <= 2; workout++) {
-    console.log(`exercise:${exercise} rep${workout}`);
+    // console.log(`exercise:${exercise} rep${workout}`);
 
     for (let i = 1; i <= 2; i++) {
-      console.log(`rep: ${workout} keep going ${i}`);
+      //console.log(`rep: ${workout} keep going ${i}`);
       for (let i = 1; i <= 4; i++) {
-        console.log(`${i} push up `);
+        // console.log(`${i} push up `);
       }
     }
   }
 }
+
+const measureKelvin = function () {
+  const last = {
+    type: "temp",
+    unit: "celsius",
+    value: prompt("degrees celsius"),
+  };
+
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+console.table(measurement);
