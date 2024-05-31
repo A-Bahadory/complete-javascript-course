@@ -17,3 +17,12 @@ if (placeOfBirth == "Asia") {
 const ageTest = 18;
 if (ageTest === 18) console.log("you are now younger boy (strict)");
 if (ageTest == 18) console.log("you are now a younger boy (loos)");
+
+let age = 18;
+//age >= 20 ? console.log("this is true day") : console.log("this is false day");
+
+// using ternary operator with template literal
+
+console.log(
+  `you can drive ${age >= 18 ? "motor bike" : "when you are above 18"}`
+);
