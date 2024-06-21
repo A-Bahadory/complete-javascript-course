@@ -34,8 +34,8 @@ for (let i = backs.length - 1; i >= 0; i--) {
 }
 
 for (let exercise = 1; exercise < 4; exercise++) {
-  console.log(`chaste day${exercise}`);
+  // console.log(`chaste day${exercise}`);
   for (let rep = 1; rep < 6; rep++) {
-    console.log(`rep ${rep}`);
+    // console.log(`rep ${rep}`);
   }
 }

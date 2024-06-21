@@ -1,14 +1,23 @@
-const calcTip = (bill) =>
-  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// const calcTip = (bill) =>
+//   bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 
-const bills = [125, 555, 55];
-const tips = [
-  calcTip(bills[0]),
-  calcTip(bills[1]),
-  calcTip(bills[bills.length - 1]),
-];
-console.log("tips", tips);
-
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log("total", total);
-console.log(calcTip(125));
+//get tips from eah index of bills array
+//push the result in tips array
+//Calculate total of bills and tips
+//push it to total array
+const bills = [125, 555, 55, 77, 80, 336];
+// const tips = [];
+const total = [80];
+function calcTipResult(bills) {
+  for (i = 0; i < bills.length; i++) {
+    if (bills[i] >= 50 && bills[i] <= 300) {
+      bills[i] * 0.15;
+    } else {
+      bills[i] * 0.2;
+    }
+  }
+  return bills;
+}
+console.log(calcTipResult(bills));
+//console.log(tispResult);
+// console.log(total);
