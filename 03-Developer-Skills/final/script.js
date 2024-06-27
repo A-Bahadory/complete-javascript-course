@@ -154,8 +154,15 @@ const printForecast = function (arr) {
   for (let i = 0; i < arr.length; i++) {
     str += `${arr[i]}ºC in ${i + 1} days ... `;
   }
+  
+  const printForecast = function (arr) {
+  let daysNumber = 1;
+  for (let i = 0; i < arr.length; i++) {
+    let outPut = `...${arr[i]}C ... in ${daysNumber++} days`;
+    console.log(outPut);
+  }
+};
   console.log('...' + str);
 };
 printForecast(data1);
 */
-
