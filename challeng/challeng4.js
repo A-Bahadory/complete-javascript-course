@@ -12,11 +12,18 @@ TEST DATA 2: [12, 5, -5, 0, 4]
 */
 
 const forecasted = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+// const printForecast = function (arr) {
+//   let daysNumber = 1;
+//   for (let i = 0; i < arr.length; i++) {
+//     let outPut = `...${arr[i]}C in ${daysNumber++} days ...`;
+//     console.log(outPut);
+//   }
+// };
 const printForecast = function (arr) {
-  let daysNumber = 1;
   for (let i = 0; i < arr.length; i++) {
-    let outPut = `...${arr[i]}C ... in ${daysNumber++} days`;
-    console.log(outPut);
+    let toString = `${arr[i]}C in ${i + 1} days`;
+    console.log(toString);
   }
 };
-printForecast(forecasted);
+printForecast(data2);
