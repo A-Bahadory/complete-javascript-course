@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 body {
-  background-color: yellow;
   padding: 4rem;
+  background-color: yellow;
+  margin: 4rem;
 }
 img {
   width: 20%;
+}
+
+.cat-div {
+  padding: 5rem;
+  background-color: red;
+  border: solid yellowgreen 3px;
 }
