@@ -1,13 +1,15 @@
 'use strict';
-// console.log('p tag', document.querySelector('.message').textContent);
-// document.querySelector('.message').textContent = 'correct number!!';
-// document.querySelector('.number').textContent = 40;
-// document.querySelector('.guess').value = 60;
-// console.log(document.querySelector('.guess').value);
+const qSelector = function (className, text) {
+  return (document.querySelector(className).textContent = text);
+};
+const style = function (className, color) {
+  return (document.querySelector(className).style.backgroundColor = color);
+};
+const message = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 
 let secretNumber = Math.trunc(Math.random() * 20 + 1);
-//document.querySelector('.number').textContent = secretNumber;
-console.log(secretNumber);
 let score = 20;
 let highScore = 0;
 
@@ -34,31 +36,10 @@ document.querySelector('.check').addEventListener('click', function () {
       qSelector('.score', score);
     }
   }
-  //   } else if (guess > secretNumber) {
-  //     if (score > 1) {
-  //       score--;
-  //       document.querySelector('.score').textContent = score;
-  //       document.querySelector('.message').textContent = 'too high';
-  //     } else {
-  //       document.querySelector('.score').textContent = 0;
-  //       document.querySelector('.message').textContent = 'you lost';
-  //     }
-  //     //when guess number less then secret number
-  //   } else if (guess < secretNumber) {
-  //     if (score > 1) {
-  //       score--;
-  //       document.querySelector('.score').textContent = score;
-  //       document.querySelector('.message').textContent = 'too low';
-  //     } else {
-  //       document.querySelector('.score').textContent = 0;
-  //       document.querySelector('.message').textContent = 'you lost the game!';
-  //     }
-  //   }
 });
 
 document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 20 + 1);
-  console.log(secretNumber, 'new s');
   score = 20;
   style('body', '#222');
   qSelector('.score', score);
@@ -67,15 +48,3 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.guess').value = '';
   qSelector('.message', 'Start guessing...');
 });
-
-const qSelector = function (className, text) {
-  return (document.querySelector(className).textContent = text);
-};
-const style = function (className, color) {
-  return (document.querySelector(className).style.backgroundColor = color);
-};
-const message = function (message) {
-  document.querySelector('.message').textContent = message;
-};
-
-//console.log(qSelector('.message', 'hello this is a test function'));
