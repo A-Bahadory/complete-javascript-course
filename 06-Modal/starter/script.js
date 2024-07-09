@@ -6,8 +6,18 @@ const addClass = function (tagName, className) {
   return tagName.classList.add(className);
 };
 
+// const deleteClass = function (className, deleteClass) {
+//   return document.querySelector(className).classList.remove(deleteClass);
+// };
 const deleteClass = function (className, deleteClass) {
-  return document.querySelector(className).classList.remove(deleteClass);
+  const element = document.querySelector(className);
+  if (element) {
+    element.classList.remove(deleteClass);
+    return true; // Indicating that the class was successfully removed
+  } else {
+    console.error(`Element not found for selector: ${className}`);
+    return false; // Indicating that no element was found to remove the class from
+  }
 };
 
 const modal = elementSelector('.modal');
@@ -18,8 +28,10 @@ const btnOpenModal = document.querySelectorAll('.show-modal');
 
 for (let i = 0; i < btnOpenModal.length; i++)
   btnOpenModal[i].addEventListener('click', function () {
-    deleteClass('.hidden', 'hidden');
-    deleteClass('.hidden', 'hidden');
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    // deleteClass(modal, 'hidden');
+    // deleteClass(overlay, 'hidden');
   });
 
 btnCloseModal.addEventListener('click', function () {
@@ -29,7 +41,8 @@ btnCloseModal.addEventListener('click', function () {
 
 document.addEventListener('keydown', function (e) {
   const keyValue = e.key;
-  if (keyValue === 'Escape' && !modal.classList.contains('hidden')) {
+  if (keyValue === 'Escape') {
+    // if (keyValue === 'Escape' && !modal.classList.contains('hidden')) {
     addClass(modal, 'hidden');
     addClass(overlay, 'hidden');
   }
